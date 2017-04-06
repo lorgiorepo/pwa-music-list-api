@@ -39,8 +39,9 @@ module.exports = {
       // Actually send the message
       sender.send(message, { registrationTokens: user_ids }, function (err, response) {
         if (err) {
-            console.error('err', err);
+            console.log('err', err);
         } else {
+            console.log('response', response)
           return res.json(response);
         } 
       });
