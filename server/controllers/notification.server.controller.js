@@ -14,8 +14,6 @@ module.exports = {
    */
   notifyUsers: function(req, res){
 
-      console.log('req', req);
-
     var sender = new gcm.Sender(secrets.fcm);
 
     // Prepare a message to be sent
@@ -41,7 +39,7 @@ module.exports = {
       // Actually send the message
       sender.send(message, { registrationTokens: user_ids }, function (err, response) {
         if (err) {
-            console.error(err);
+            console.error('err', err);
         } else {
           return res.json(response);
         } 
