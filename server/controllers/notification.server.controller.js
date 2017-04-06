@@ -14,7 +14,14 @@ module.exports = {
    */
   notifyUsers: function(req, res){
 
-    var sender = new gcm.Sender(secrets.fcm);
+    var requestOptions = {
+        Authorization: 'key=AAAAR6zbjlM:APA91bEZvz22XTQOgs2YA-cMqn16_1XsGVw2Z-SvBCVtnVEBSGIs-Pk5D6Y7oBTtcBzgmtcNXPpWxMh_wh7mst4bSbbXoYShtoLyO6P1v7rSRSYJIeDUr7p82X-307OmBoLZGNg1Psxx'
+    };
+
+    console.log('secrets.fcm', secrets.fcm);
+    console.log('authorization', requestOptions);
+
+    var sender = new gcm.Sender(secrets.fcm, requestOptions);
 
     // Prepare a message to be sent
     var message = new gcm.Message({
@@ -34,7 +41,7 @@ module.exports = {
 
       console.log("User Ids", user_ids);
 
-      console.log(sender);
+      console.log('sender', sender);
 
       // Actually send the message
       sender.send(message, { registrationTokens: user_ids }, function (err, response) {
