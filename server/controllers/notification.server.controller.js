@@ -21,7 +21,7 @@ module.exports = {
     console.log('secrets.fcm', secrets.fcm);
     console.log('authorization', requestOptions);
 
-    var sender = new gcm.Sender(secrets.fcm, requestOptions);
+    var sender = new gcm.Sender(secrets.fcm);
 
     // Prepare a message to be sent
     var message = new gcm.Message({
