@@ -14,6 +14,8 @@ module.exports = {
    */
   notifyUsers: function(req, res){
 
+      console.log('req', req);
+
     var sender = new gcm.Sender(secrets.fcm);
 
     // Prepare a message to be sent
@@ -26,6 +28,8 @@ module.exports = {
     });
 
     User.find({}, function(err, users) {
+
+        console.log('users', users);
 
       // user subscription ids to deliver message to
       var user_ids = _.map(users, 'user_id');
