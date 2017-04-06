@@ -52,12 +52,7 @@ app.use(express.static( __dirname + '/public')); //use to serve static files lik
  */
 route(app);
 
-//configure any route whatsoever to redirect to angular
 app.get('*', function(req, res) {
-    /** frontend routes =========================================================
-      * route to handle all angular requests
-      * load the single view file (angular will handle the page changes on the front-end)
-      **/
      res.sendFile(__dirname + '/public/index.html' );
 });
 
