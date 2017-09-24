@@ -1,6 +1,8 @@
 # pwa-music-list-api
 Progressive Web Apps Music List API
 
+https://travis-ci.org/lorgiorepo/pwa-music-list-api.svg?branch=master
+
 ## Overview
 
 ## How to Install
