@@ -7,3 +7,7 @@ addons:
 script:
   # other script steps might be done before running the actual analysis
   - sonar-scanner
+deploy:
+  provider: heroku
+  api_key:
+    secure: bb25dfba-03eb-4df8-8eba-61401196599c
