@@ -16,4 +16,4 @@ $ nvm use
 ## Run testing
 
 ## Deploy
-Se ejecuta travis con sonar para depliegue en heroku
+Se ejecuta travis CI con sonar para depliegue en heroku
