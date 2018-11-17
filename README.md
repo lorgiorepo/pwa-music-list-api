@@ -17,3 +17,4 @@ $ nvm use
 
 ## Deploy
 Se ejecuta travis CI con sonar para depliegue en heroku
+Se aplicaron las mejores tecnicas
