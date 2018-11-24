@@ -32,7 +32,7 @@
     "fs": "0.0.2",
     "gravatar": "^1.1.1",
     "jsonwebtoken": "^5.0.1",
-    "lodash": "^3.10.0",
+    "lodash": ">=4.17.5",
     "mongoose": "^4.0.5",
     "morgan": "^1.5.3",
     "multiparty": "^4.1.2",
