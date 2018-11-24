@@ -1,6 +1,6 @@
 {
   "name": "pwa-music-list-api",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "API Progressive Web Apps Music list",
   "main": "server.js",
   "engines": {
