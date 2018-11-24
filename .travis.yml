@@ -9,13 +9,13 @@ addons:
 #  - sonar-scanner
 jobs:
   include:
-    - stage: "Test"
+    - stage: Test
       name: "Unit Tests"
       script: npm run test
-    _ stage: "Quality"
+    - stage: Quality
       name: "Sonar Analysis"
       script: sonar-scanner
-    - stage: deploy
+    - stage: Deploy
       name: "Deploy yo Heroku"
       deploy: &heroku
         provider: heroku
