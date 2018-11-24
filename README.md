@@ -1,8 +1,7 @@
 # pwa-music-list-api
 Progressive Web Apps Music List API
 
-[![Build Status](https://travis-ci.org/lorgiorepo/pwa-music-list-api.svg?branch=master)](https://travis-ci.org/lorgiorepo/pwa-music-list-api)
-[![version][version-badge]][CHANGELOG] [![license][license-badge]][LICENSE]
+[![Build Status](https://travis-ci.org/lorgiorepo/pwa-music-list-api.svg?branch=master)](https://travis-ci.org/lorgiorepo/pwa-music-list-api)[![version][version-badge]][CHANGELOG] [![license][license-badge]][LICENSE]
 
 ## Development
 
