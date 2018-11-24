@@ -17,7 +17,7 @@ jobs:
       script: sonar-scanner
     - stage: deploy
       name: "Deploy yo Heroku"
-      deploy:
-      provider: heroku
-      api_key:
-        secure: bb25dfba-03eb-4df8-8eba-61401196599c
+      deploy: &heroku
+        provider: heroku
+        api_key:
+          secure: bb25dfba-03eb-4df8-8eba-61401196599c
