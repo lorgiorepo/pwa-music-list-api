@@ -18,6 +18,7 @@ jobs:
     - stage: Deploy
       if: branch = master
       name: "Deploy yo Heroku"
+      script: skip
       deploy: &heroku
         provider: heroku
         api_key:
