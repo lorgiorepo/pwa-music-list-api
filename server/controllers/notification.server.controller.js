@@ -17,7 +17,7 @@ module.exports = {
 
     // Prepare a message to be sent
     var message = new gcm.Message({
-        notification: {
+        data: {
           title: "Progressive Web Apps",
           icon: "ic_launcher",
           body: "Bienvenido al meetup de progressive web apps"
