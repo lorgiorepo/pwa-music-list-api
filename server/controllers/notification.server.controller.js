@@ -19,8 +19,7 @@ module.exports = {
     var message = new gcm.Message({
         contentAvailable: true,
         data: {
-          flight: 'Change',
-          action: 'schedule'
+          title: 'Change'
         },
         notification: {
             title: "Hello, World",
