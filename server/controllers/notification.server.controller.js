@@ -17,10 +17,15 @@ module.exports = {
 
     // Prepare a message to be sent
     var message = new gcm.Message({
+        contentAvailable: true,
         data: {
-          title: "Progressive Web Apps",
-          icon: "ic_launcher",
-          body: "Bienvenido al meetup de progressive web apps"
+          flight: 'Change',
+          action: 'schedule'
+        },
+        notification: {
+            title: "Hello, World",
+            icon: "ic_launcher",
+            body: "This is a notification that will be displayed if your app is in the background."
         }
     });
 
