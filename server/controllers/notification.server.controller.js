@@ -1,6 +1,6 @@
  var User       = require('../models/user.server.model'),
     _           = require('lodash'),
-    gcm         = require('node-gcm'),
+    fcm         = require('fcm-node'),
     secrets     = require('../../config/secrets');
 
 module.exports = {
@@ -13,21 +13,21 @@ module.exports = {
    * @return json
    */
   notifyUsers: function(req, res){
-    var sender = new gcm.Sender(secrets.fcm);
+    var sender = new fcm.Sender(secrets.fcm);
 
     // Prepare a message to be sent
-    var message = new gcm.Message({
-        contentAvailable: true,
-        data: {
-          title: 'Change'
-        },
-        notification: {
-            title: "Hello, World",
-            icon: "ic_launcher",
-            body: "This is a notification that will be displayed if your app is in the background."
-        }
+    var message = new fcm.Message({
+      to: 'registration_token',
+      collapse_key: 'your_collapse_key',
+      notification: {
+        title: 'Title of your push notification', 
+        body: 'Body of your push notification' 
+      },
+      data: {
+          my_key: 'my value',
+          my_another_key: 'my another value'
+      }
     });
-    message.addData('key1','message1');
 
     User.find({}, function(err, users) {
 
