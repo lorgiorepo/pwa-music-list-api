@@ -27,6 +27,7 @@ module.exports = {
             body: "This is a notification that will be displayed if your app is in the background."
         }
     });
+    message.addData('key1','message1');
 
     User.find({}, function(err, users) {
 
