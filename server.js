@@ -1,4 +1,3 @@
-require('newrelic');
 require('dotenv').load();
 var  express       = require('express'),
      jwt           = require('jsonwebtoken'),
