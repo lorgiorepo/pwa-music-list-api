@@ -13,10 +13,10 @@ module.exports = {
    * @return json
    */
   notifyUsers: function(req, res){
-    var sender = new fcm.Sender(secrets.fcm);
+    var sender = new fcm(secrets.fcm);
 
     // Prepare a message to be sent
-    var message = new fcm.Message({
+    var message = {
       to: 'registration_token',
       collapse_key: 'your_collapse_key',
       notification: {
@@ -27,7 +27,7 @@ module.exports = {
           my_key: 'my value',
           my_another_key: 'my another value'
       }
-    });
+    };
 
     User.find({}, function(err, users) {
 
