@@ -1,6 +1,6 @@
- var User       = require('../models/user.server.model'),
+var fcm = require('fcm-node');
+var User       = require('../models/user.server.model'),
     _           = require('lodash'),
-    fcm         = require('fcm-node'),
     secrets     = require('../../config/secrets');
 
 module.exports = {
