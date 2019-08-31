@@ -1,7 +1,7 @@
-var fcm = require('fcm-node');
-var User       = require('../models/user.server.model'),
-    _           = require('lodash'),
-    secrets     = require('../../config/secrets');
+var fcm         = require('fcm-notification');
+var FCM         = new fcm('../../config/pwa-music-firebase-adminsdk-p8t70-8fac03917b.json');
+var User        = require('../models/user.server.model');
+var _           = require('lodash');
 
 module.exports = {
 
@@ -13,32 +13,36 @@ module.exports = {
    * @return json
    */
   notifyUsers: function(req, res){
-    var sender = new fcm(secrets.fcm);
-
-    // Prepare a message to be sent
-    var message = {
-      to: 'registration_token',
-      collapse_key: 'your_collapse_key',
-      notification: {
-        title: 'Title of your push notification', 
-        body: 'Body of your push notification' 
-      },
-      data: {
-          my_key: 'my value',
-          my_another_key: 'my another value'
-      }
-    };
-
+    
     User.find({}, function(err, users) {
 
       // user subscription ids to deliver message to
       var user_ids = _.map(users, 'user_id');
-
       console.log("User Ids", user_ids);
 
-      console.log('sender', sender);
+      // Prepare a message to be sent
+      var message = {
+        data: {    //This is only optional, you can send any data
+            score: '850',
+            time: '2:45'
+        },
+        notification:{
+            title : 'Title of notification',
+            body : 'Body of notification'
+        },
+        token : user_ids
+      };
 
-      // Actually send the message
+      FCM.send(message, function(err, response) {
+        if (err){
+          console.log('error found', err);
+        } else {
+          console.log('response here', response);
+          return res.json(response);
+        }
+      });
+
+      /* Actually send the message
       sender.send(message, { registrationTokens: user_ids }, function (err, response) {
         if (err) {
             console.log('err', err);
@@ -47,6 +51,7 @@ module.exports = {
           return res.json(response);
         } 
       });
+      */
     });
    
   }
